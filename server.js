@@ -29,8 +29,9 @@ app.get('/types', function handleGetTypes(req, res) {
 })
 
 app.get('/movie', function handleGetMovie(req, res) {
-  let response = MOVIE.film_title;
+  let response = MOVIE;
 
+  console.log(req.query.genre);
   // filter our pokemon by name if name query param is present
   if (req.query.genre) {
     response = response.filter(movie =>
